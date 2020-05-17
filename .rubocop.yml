@@ -1,0 +1,41 @@
+inherit_from: .rubocop_todo.yml
+
+require: rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'config/**/*'
+    - 'bin/**/*'
+    - 'coverage/**/*'
+    - 'node_modules/**/*'
+
+Bundler/OrderedGems:
+  Enabled: true
+  # Exclude:
+  #   - 'Gemfile'
+
+Layout/EmptyLines:
+  Enabled: true
+  # Exclude:
+  #   - 'Gemfile'
+
+Style/BlockComments:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: true
+
+Style/SymbolArray:
+  Enabled: true
+  EnforcedStyle: brackets
+  
+Layout/LineLength:
+  Enabled: true
+  Max: 130
