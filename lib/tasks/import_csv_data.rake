@@ -12,19 +12,19 @@ namespace :import_csv_data do
       'db/data/invoice_items.csv' => InvoiceItem,
       'db/data/transactions.csv' => Transaction
     }
-
+    
     puts "Preparing to delete exisiting data"
     file_objects.values.each(&:destroy_all)
+    puts "DataBase is now reset"
     puts "Loading new data"
 
-    total_time = Benchmark.realtime do
-
       file_objects.each do |file, object|
+      total_time = Benchmark.realtime do
         SmarterCSV.process(file, headers: true) do |row|
           object.create!(row)
         end
       end
+      puts "total time to import #{object}'s: #{total_time} seconds"
     end
-    puts "total time to import data: #{total_time} seconds"
   end
 end
