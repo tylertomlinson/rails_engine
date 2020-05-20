@@ -23,7 +23,7 @@ RSpec.describe 'Items request API' do
     item_attributes = @items['data'].first['attributes']
 
     expect(item_attributes['name']).to eq(@item1['attributes']['name'])
-    expect(item_attributes['desciption']).to eq(@item1['description'])
+    expect(item_attributes['description']).to eq(@item1['attributes']['description'])
     expect(item_attributes['unit_price']).to eq(@item1['attributes']['unit_price'])
     expect(item_attributes['merchant_id']).to eq(@item1['attributes']['merchant_id'])
   end
@@ -59,7 +59,7 @@ RSpec.describe 'Items request API' do
   it 'data is shown correctly' do
     item_data = @item1_info['data']
     expect(item_data['name']).to eq(@item1['name'])
-    expect(item_data['desciption']).to eq(@item1['description'])
+    expect(item_data['description']).to eq(@item1['description'])
     expect(item_data['unit_price']).to eq(@item1['unit_price'])
     expect(item_data['merchant_id']).to eq(@item1['merchant_id'])
   end
