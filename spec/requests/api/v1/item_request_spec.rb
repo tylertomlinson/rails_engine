@@ -65,7 +65,7 @@ RSpec.describe 'Items request API' do
   end
 
   it 'can create new item' do
-    item_params = { name: 'test name', description: 'test desciption', unit_price: '200', merchant_id: @merchant.id }
+    item_params = { name: 'test name', description: 'test description', unit_price: '200', merchant_id: @merchant.id }
 
     post '/api/v1/items', params: { item: item_params }
     expect(response).to be_successful
@@ -78,7 +78,7 @@ RSpec.describe 'Items request API' do
   it 'can update item' do
     item_id = @item1['id']
 
-    item_params = { name: 'test name updated', description: 'test desciption', unit_price: 200, merchant_id: @merchant.id }
+    item_params = { name: 'test name updated', description: 'test description', unit_price: 200, merchant_id: @merchant.id }
 
     patch "/api/v1/items/#{item_id}", params: { item: item_params }
 
