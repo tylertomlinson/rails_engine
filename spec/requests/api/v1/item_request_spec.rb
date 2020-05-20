@@ -32,27 +32,28 @@ RSpec.describe 'Items request API' do
     first_item_data = @items['data'].first['attributes']
     second_item_data = @items['data'].second['attributes']
     third_item_data = @items['data'][2]['attributes']
+    a = 'attributes'
     item1 = @items['data'].first
     item2 = @items['data'].second
     item3 = @items['data'][2]
 
-    expect(first_item_data['id']).to eq(item1['attributes']['id'])
-    expect(first_item_data['name']).to eq(item1['attributes']['name'])
+    expect(first_item_data['id']).to eq(item1[a]['id'])
+    expect(first_item_data['name']).to eq(item1[a]['name'])
     expect(first_item_data['type']).to eq(item1['item'])
-    expect(first_item_data['id']).to_not eq(item2['attributes']['id'])
-    expect(first_item_data['name']).to_not eq(item2['attributes']['name'])
+    expect(first_item_data['id']).to_not eq(item2[a]['id'])
+    expect(first_item_data['name']).to_not eq(item2[a]['name'])
 
-    expect(second_item_data['id']).to eq(item2['attributes']['id'])
-    expect(second_item_data['name']).to eq(item2['attributes']['name'])
+    expect(second_item_data['id']).to eq(item2[a]['id'])
+    expect(second_item_data['name']).to eq(item2[a]['name'])
     expect(second_item_data['type']).to eq(item2['item'])
-    expect(second_item_data['id']).to_not eq(item1['attributes']['id'])
-    expect(second_item_data['name']).to_not eq(item1['attributes']['name'])
+    expect(second_item_data['id']).to_not eq(item1[a]['id'])
+    expect(second_item_data['name']).to_not eq(item1[a]['name'])
 
-    expect(third_item_data['id']).to eq(item3['attributes']['id'])
-    expect(third_item_data['name']).to eq(item3['attributes']['name'])
+    expect(third_item_data['id']).to eq(item3[a]['id'])
+    expect(third_item_data['name']).to eq(item3[a]['name'])
     expect(third_item_data['type']).to eq(item3['item'])
-    expect(third_item_data['id']).to_not eq(item2['attributes']['id'])
-    expect(third_item_data['name']).to_not eq(item2['attributes']['name'])
+    expect(third_item_data['id']).to_not eq(item2[a]['id'])
+    expect(third_item_data['name']).to_not eq(item2[a]['name'])
 
   end
 
