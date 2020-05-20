@@ -26,5 +26,9 @@ namespace :import_csv_data do
       end
       puts "total time to import #{object}'s: #{total_time} seconds"
     end
+
+    ActiveRecord::Base.connection.tables.each do |table|
+      ActiveRecord::Base.connection.reset_pk_sequence!(table)
+    end
   end
 end
