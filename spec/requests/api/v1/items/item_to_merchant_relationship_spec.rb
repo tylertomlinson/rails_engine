@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Relationship merchant' do
+describe 'Relationship between items and merchant' do
   it 'can return a merchant for an item' do
 
     merchant = create(:merchant)
