@@ -54,7 +54,6 @@ RSpec.describe 'Items request API' do
     expect(third_item_data['type']).to eq(item3['item'])
     expect(third_item_data['id']).to_not eq(item2[a]['id'])
     expect(third_item_data['name']).to_not eq(item2[a]['name'])
-
   end
 
   it 'data is shown correctly' do
