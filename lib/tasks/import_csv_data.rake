@@ -30,5 +30,5 @@ namespace :import_csv_data do
     ActiveRecord::Base.connection.tables.each do |table|
       ActiveRecord::Base.connection.reset_pk_sequence!(table)
     end
-  end  
+  end
 end
