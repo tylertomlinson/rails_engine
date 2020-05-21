@@ -91,7 +91,7 @@ RSpec.describe 'Merchants find controller' do
     merchant4 = create(:merchant, name: 'tyler tomlinson')
     merchant5 = create(:merchant, name: 'test')
 
-    get "/api/v1/merchants/find_all?name=tyler"
+    get '/api/v1/merchants/find_all?name=tyler'
 
     expect(response).to be_successful
 
