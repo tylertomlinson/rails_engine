@@ -13,22 +13,22 @@ RSpec.describe Merchant, type: :model do
 
   describe 'search_by_name' do
     it 'can find merchant case insensitive' do
-      merchant_1 = create(:merchant, name: 'tyler')
+      merchant1 = create(:merchant, name: 'tyler')
 
       result = Merchant.search_by_name('TYLER')
-      expect(result).to eq(merchant_1)
+      expect(result).to eq(merchant1)
     end
   end
 
   describe 'search_all_by_name' do
     it 'can find all merchants with name case insensitive' do
-      @merchant_1 = create(:merchant, name: 'tyler')
-      @merchant_2 = create(:merchant, name: 'tyler')
-      @merchant_3 = create(:merchant, name: 'tyler tomlinson')
-      @merchant_4 = create(:merchant, name: 'bill')
+      @merchant1 = create(:merchant, name: 'tyler')
+      @merchant2 = create(:merchant, name: 'tyler')
+      @merchant3 = create(:merchant, name: 'tyler tomlinson')
+      @merchant4 = create(:merchant, name: 'bill')
 
       found = Merchant.search_all_by_name('TYLER')
-      expect(found).to eq([@merchant_1, @merchant_2, @merchant_3])
+      expect(found).to eq([@merchant1, @merchant2, @merchant3])
     end
   end
 end
