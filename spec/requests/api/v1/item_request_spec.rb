@@ -66,7 +66,7 @@ RSpec.describe 'Items request API' do
 
   it 'can create new item' do
     item_params = { name: 'test name', description: 'test description', unit_price: '200', merchant_id: @merchant.id }
-
+#test
     post '/api/v1/items', params: { item: item_params }
     expect(response).to be_successful
 
